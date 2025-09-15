@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cybersecurity Intelligence Platform Design System
+All colors MUST be HSL for professional cyber threat intelligence interface.
+*/
+
+@layer base {
+  :root {
+    /* Core cyber security theme - professional dark interface */
+    --background: 220 27% 8%;
+    --foreground: 210 20% 95%;
+
+    /* Card system for threat intelligence panels */
+    --card: 220 25% 10%;
+    --card-foreground: 210 15% 92%;
+
+    /* Popover and dropdown styling */
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 15% 92%;
+
+    /* Primary cyber security blue */
+    --primary: 210 100% 50%;
+    --primary-foreground: 220 27% 8%;
+    --primary-glow: 210 100% 65%;
+
+    /* Secondary interface elements */
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 210 15% 85%;
+
+    /* Muted elements for background information */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 10% 65%;
+
+    /* Accent for highlights and interactive elements */
+    --accent: 195 100% 60%;
+    --accent-foreground: 220 27% 8%;
+
+    /* Threat level indicators */
+    --critical: 0 85% 55%;
+    --critical-foreground: 210 20% 95%;
+    --high: 15 85% 55%;
+    --high-foreground: 210 20% 95%;
+    --medium: 45 85% 55%;
+    --medium-foreground: 220 27% 8%;
+    --low: 120 40% 50%;
+    --low-foreground: 220 27% 8%;
+    --info: 210 100% 65%;
+    --info-foreground: 220 27% 8%;
+
+    /* System colors */
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 210 20% 95%;
+
+    /* Border and input styling */
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 210 100% 50%;
+
+    /* Gradients for modern cyber aesthetics */
+    --gradient-cyber: linear-gradient(135deg, hsl(210 100% 50%), hsl(195 100% 60%));
+    --gradient-threat: linear-gradient(90deg, hsl(0 85% 55%), hsl(15 85% 55%));
+    --gradient-success: linear-gradient(90deg, hsl(120 40% 50%), hsl(150 40% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 10%), hsl(220 20% 12%));
+
+    /* Shadows for depth */
+    --shadow-cyber: 0 10px 30px -10px hsl(210 100% 50% / 0.3);
+    --shadow-threat: 0 5px 20px -5px hsl(0 85% 55% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(220 27% 8% / 0.5);
+
+    /* Animation and transitions */
+    --transition-cyber: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Custom component styles using design system */
+  .cyber-card {
+    @apply bg-card border-border;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-cyber);
+  }
+
+  .cyber-card:hover {
+    box-shadow: var(--shadow-cyber);
+  }
+
+  .cyber-button {
+    @apply border-primary/20 hover:bg-primary/10 hover:border-primary/40;
+    transition: var(--transition-cyber);
+  }
+
+  .cyber-button-primary {
+    background: var(--gradient-cyber);
+    @apply hover:opacity-90;
+    box-shadow: var(--shadow-cyber);
+    transition: var(--transition-cyber);
+  }
+
+  .cyber-badge {
+    @apply border-accent/30 bg-accent/10 text-accent;
+  }
+}
