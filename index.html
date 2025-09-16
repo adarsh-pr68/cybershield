@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Threat Intelligence Platform</title>
+    <style>
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html, body {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        color: #fff;
+      }
+
+      /* Root container */
+      #root {
+        width: 95vw;       /* Width adjusts to viewport */
+        height: 95vh;      /* Height adjusts to viewport */
+        background: linear-gradient(145deg, #1e3c72, #2a5298);
+        border-radius: 2vw; /* Scales with screen */
+        padding: 2vw;       /* Scales with screen */
+        box-shadow: 0 2vw 4vw rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      /* Scrollbar styling */
+      #root::-webkit-scrollbar {
+        width: 0.8vw;
+      }
+      #root::-webkit-scrollbar-thumb {
+        background: #ff7e5f;
+        border-radius: 1vw;
+      }
+      #root::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(3vh);}
+        100% { opacity: 1; transform: translateY(0);}
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        #root {
+          padding: 3vw;
+          border-radius: 3vw;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #root {
+          padding: 4vw;
+          border-radius: 4vw;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #root {
+          padding: 5vw;
+          border-radius: 5vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
